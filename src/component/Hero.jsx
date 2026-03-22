@@ -160,7 +160,7 @@ const Hero = () => {
         <div className="flex w-full lg:w-1/2 justify-center items-center">
           <div
             ref={cardRef}
-            className="relative h-80 w-64 bg-slate-800 border-[3px] border-black rotate-3 shadow-[15px_15px_0px_0px_rgba(251,191,36,0.3)] group transition-transform hover:rotate-0 duration-500 bg-[url(./home_img.PNG)] bg-cover bg-center"
+            className="relative h-80 w-64 bg-slate-800 border-[3px] border-black rotate-3 shadow-[15px_15px_0px_0px_rgba(251,191,36,0.3)] group transition-transform hover:rotate-0 duration-500 bg-[url(./public/home_img.PNG)] bg-cover bg-center"
           >
             <p className="absolute right-[-30px] -bottom-4 px-6 py-3 border-[3px] border-black bg-emerald-400 text-black font-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] -rotate-3 group-hover:rotate-0 transition-transform">
               Full-Stack Ninja
