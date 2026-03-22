@@ -150,7 +150,10 @@ const Hero = () => {
           </p>
 
           <div className="hero-text-item pt-4">
-            <button onClick={() => scrollToSection("touch")} className="p-3 px-8 bg-[#45B1E8] rounded-md border-[3px] border-black font-bold shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] duration-100 cursor-pointer uppercase">
+            <button
+              onClick={() => scrollToSection("touch")}
+              className="p-3 px-8 bg-[#45B1E8] rounded-md border-[3px] border-black font-bold shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] duration-100 cursor-pointer uppercase"
+            >
               Get in Touch!
             </button>
           </div>
@@ -160,8 +163,13 @@ const Hero = () => {
         <div className="flex w-full lg:w-1/2 justify-center items-center">
           <div
             ref={cardRef}
-            className="relative h-80 w-64 bg-slate-800 border-[3px] border-black rotate-3 shadow-[15px_15px_0px_0px_rgba(251,191,36,0.3)] group transition-transform hover:rotate-0 duration-500 bg-[url(./home_img.PNG)] bg-cover bg-center"
+            className="relative h-80 w-64 bg-slate-800 border-[3px] border-black rotate-3 shadow-[15px_15px_0px_0px_rgba(251,191,36,0.3)] group transition-transform hover:rotate-0 duration-500 "
           >
+            <img
+              src="./home_img.PNG"
+              alt="Home"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
             <p className="absolute right-[-30px] -bottom-4 px-6 py-3 border-[3px] border-black bg-emerald-400 text-black font-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] -rotate-3 group-hover:rotate-0 transition-transform">
               Full-Stack Ninja
             </p>
@@ -182,7 +190,7 @@ const Hero = () => {
       <ul className="z-2 flex p-10 gap-5 flex-wrap justify-center mb-10">
         {skillData.map((skill, i) => (
           <li
-          onClick={() => scrollToSection("skills")}
+            onClick={() => scrollToSection("skills")}
             key={i}
             className="skill-pill flex items-center gap-2 py-2 px-5 bg-white rounded-lg border-[3px] border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:bg-amber-300 hover:translate-y-[2px] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] duration-100 cursor-pointer transition-colors"
           >
