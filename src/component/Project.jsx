@@ -3,7 +3,15 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { FaHome } from "react-icons/fa";
+delete L.Icon.Default.prototype._getIconUrl;
+const apiUrl = import.meta.env.VITE_API_KEY;
 
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:
+    "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+});
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -88,9 +96,13 @@ const markerIcon = L.divIcon({
 
 function MapActions({ targetCoords }) {
   const map = useMap();
-  window.zoomIn = () => map.zoomIn();
-  window.zoomOut = () => map.zoomOut();
-  window.goHome = () => map.flyTo(CENTER, 8);
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.zoomIn = () => map.zoomIn();
+      window.zoomOut = () => map.zoomOut();
+      window.goHome = () => map.flyTo(CENTER, 8);
+    }
+  }, [map]);
 
   React.useEffect(() => {
     if (targetCoords) map.flyTo(targetCoords, 14, { duration: 1.5 });
@@ -167,7 +179,7 @@ export default function Project() {
 
   return (
     <div
-      id='projects'
+      id="projects"
       ref={componentRef}
       className="z-10 flex flex-col items-center justify-center  p-4 font-mono gap-5 mb-12 overflow-hidden"
     >
@@ -246,7 +258,7 @@ export default function Project() {
         </div>
 
         {/* RIGHT: Map Section */}
-        <div className="map-section hidden lg:flex w-[60%] relativeh-auto bg-stone-50 shadow-[7px_7px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+        <div className="map-section hidden lg:flex w-[60%] relative h-auto bg-stone-50 shadow-[7px_7px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
           <div className="absolute top-5 right-5 z-[1000] flex flex-col gap-3">
             <button onClick={() => window.goHome()} className="map-btn">
               <FaHome />
@@ -272,7 +284,7 @@ export default function Project() {
             zoomControl={false}
             className="h-full w-full grayscale-[15%]"
           >
-            <TileLayer url="https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg" />
+            <TileLayer url={`https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg?api_key=${apiUrl}`} />
             {TIMELINE_ITEMS.filter((item) => item.showOnMap).map(
               (item, idx) => (
                 <Marker key={idx} position={item.coords} icon={markerIcon}>
