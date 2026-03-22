@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+
+/* Leaflet default reset to match our custom style */
+.leaflet-popup-content-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+
+
+.leaflet-popup-tip {
+  display: none !important;
+}
+
+.leaflet-container {
+  background: #fdf6e3 !important; /* Matches watercolor theme */
+}

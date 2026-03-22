@@ -1,0 +1,32 @@
+/* ===================== Custom Scrollbar ===================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fffafa;
+  border-left: 2px solid black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #45B1E8;
+  border: 2px solid black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #66CDAA;
+}
+
+/* ===================== Custom Input Cursor ===================== */
+input.custom-cursor,
+textarea.custom-cursor {
+  font-size: 16px;
+  padding: 8px;
+  width: 300px;
+  border: 1px solid #ccc;
+  outline: none;
+
+  /* Blinking cursor */
+  caret-color: black;   /* Cursor color */
+  caret-width: 3px;     /* Makes it wider (modern browsers) */
+}
