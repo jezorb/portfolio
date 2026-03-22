@@ -1,5 +1,4 @@
 import React, { useLayoutEffect, useRef } from "react";
-
 import gsap from "gsap";
 import { FaGithub } from "react-icons/fa";
 
@@ -42,7 +41,7 @@ const Navbar = () => {
           "-=0.2",
         );
 
-      // Continuous subtle "float" for logo to make it more attractive
+      // Continuous subtle "float" for logo
       gsap.to(".logo-letter", {
         y: -3,
         repeat: -1,
@@ -69,55 +68,77 @@ const Navbar = () => {
   return (
     <div
       ref={navRef}
-      className="relative z-5 flex justify-between items-center p-5 mx-4 my-5 bg-amber-300 h-16 lg:h-18 border-3 border-black lg:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]"
+      className="relative z-50 flex justify-between items-center p-3 sm:p-5 mx-2 sm:mx-4 my-2 sm:my-5 bg-amber-300 h-14 sm:h-16 lg:h-18 border-2 sm:border-3 border-black lg:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
     >
       {/* Logo Section */}
       <div
         ref={logoRef}
-        className="flex justify-center items-center gap-2 lg:text-4xl text-3xl cursor-pointer"
+        className="flex justify-center items-center gap-1 sm:gap-2 text-2xl sm:text-3xl lg:text-4xl cursor-pointer"
       >
-        <p className="logo-letter lg:h-12 lg:w-12 h-10 w-10 flex items-center justify-center font-black bg-[#45B1E8] border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-white transition-colors duration-200">
+        <p className="logo-letter h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 flex items-center justify-center font-black bg-[#45B1E8] border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-white transition-colors duration-200">
           Y
         </p>
-        <p className="logo-letter lg:h-12 lg:w-12 h-10 w-10 flex items-center justify-center font-black bg-[#FF6666] border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-white transition-colors duration-200">
+        <p className="logo-letter h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 flex items-center justify-center font-black bg-[#FF6666] border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-white transition-colors duration-200">
           J
         </p>
       </div>
 
       {/* Desktop Menu */}
-      <ul className="hidden lg:flex justify-center items-center gap-6 text-xl ">
-        <li onClick={() => scrollToSection("home")} className="nav-item transition-colors cursor-pointer hover:text-white  uppercase">
+      <ul className="hidden lg:flex flex-wrap justify-center items-center gap-4 lg:gap-6 text-base sm:text-xl">
+        <li
+          onClick={() => scrollToSection("home")}
+          className="nav-item transition-colors cursor-pointer hover:text-white uppercase"
+        >
           Home
         </li>
-        <li onClick={() => scrollToSection("about")} className="nav-item hover:text-white transition-colors cursor-pointer  uppercase">
+        <li
+          onClick={() => scrollToSection("about")}
+          className="nav-item hover:text-white transition-colors cursor-pointer uppercase"
+        >
           About
         </li>
-        <li onClick={() => scrollToSection("skills")} className="nav-item hover:text-white transition-colors cursor-pointer  uppercase">
+        <li
+          onClick={() => scrollToSection("skills")}
+          className="nav-item hover:text-white transition-colors cursor-pointer uppercase"
+        >
           Skills
         </li>
-        <li onClick={() => scrollToSection("projects")} className="nav-item hover:text-white transition-colors cursor-pointer  uppercase">
+        <li
+          onClick={() => scrollToSection("projects")}
+          className="nav-item hover:text-white transition-colors cursor-pointer uppercase"
+        >
           Projects
         </li>
 
-        <li className="nav-item">
-          <div className="flex gap-5 items-center *:cursor-pointer">
-            <p onClick={() => scrollToSection("terminal")} className="py-2 px-4 bg-[#fffafa] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]   duration-100">
-              Terminal
-            </p>
+        <li className="nav-item flex flex-wrap gap-2 sm:gap-5 items-center">
+          <p
+            onClick={() => scrollToSection("terminal")}
+            className="py-1 px-3 sm:py-2 sm:px-4 bg-[#fffafa] border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] duration-100"
+          >
+            Terminal
+          </p>
 
-            <p onClick={() => scrollToSection("touch")} className="p-2 bg-[#45B1E8] rounded-md border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px]  hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] duration-100 d">
-              Get in Touch!
-            </p>
+          <p
+            onClick={() => scrollToSection("touch")}
+            className="py-1 px-2 sm:py-2 sm:px-3 bg-[#45B1E8] rounded-md border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] duration-100"
+          >
+            Get in Touch!
+          </p>
 
-            <p onClick={() => window.open("https://github.com/jezorb", "_blank")} className="p-3 text-center bg-[#45B1E8] rounded-md border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-1px] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]  transition-colors duration-200 ">
-              <FaGithub />
-            </p>
-          </div>
+          <p
+            onClick={() => window.open("https://github.com/jezorb", "_blank")}
+            className="p-2 sm:p-3 text-center bg-[#45B1E8] rounded-md border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-colors duration-200"
+          >
+            <FaGithub />
+          </p>
         </li>
       </ul>
 
-      {/* Mobile Dark Mode Toggle */}
-      <p onClick={() => window.open("https://github.com/jezorb", "_blank")} className="p-3 text-center bg-[#45B1E8] rounded-md border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] lg:hidden hover:translate-y-[-2px] duration-100 cursor-pointer ">
+      {/* Mobile GitHub Icon */}
+      <p
+        onClick={() => window.open("https://github.com/jezorb", "_blank")}
+        className="p-2 sm:p-3 text-center bg-[#45B1E8] rounded-md border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] lg:hidden hover:-translate-y-0.5 duration-100 cursor-pointer"
+      >
         <FaGithub />
       </p>
     </div>

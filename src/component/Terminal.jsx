@@ -439,64 +439,62 @@ export default function Terminal() {
 
   return (
     <div
-      id="terminal"
-      ref={component}
-      className="z-1 min-h-screen flex items-center justify-center p-10 font-mono flex-col gap-4"
-    >
-      <div
-        ref={headerRef}
-        className="text-start text-4xl lg:text-5xl font-medium py-4 border-3 w-[90%] flex justify-center items-center shadow-[_5px_5px_rgb(0,0,0)] bg-amber-300"
-      >
-        <p>System Status</p>
+  id="terminal"
+  ref={component}
+  className="z-1 min-h-screen flex flex-col gap-3 sm:gap-4 items-center justify-center px-4 sm:px-6 md:px-10 py-6 sm:py-8 font-mono"
+>
+  {/* Header */}
+  <div
+    ref={headerRef}
+    className="text-3xl sm:text-4xl lg:text-5xl font-medium py-3 sm:py-4 border-3 w-full sm:w-[95%] md:w-[90%] flex justify-center items-center shadow-[_5px_5px_rgb(0,0,0)] bg-amber-300"
+  >
+    <p>System Status</p>
+  </div>
+
+  {/* Terminal body */}
+  <div
+    ref={contentRef}
+    onClick={(e) => e.target.tagName !== "INPUT" && inputRef.current?.focus()}
+    className="w-full sm:w-[95%] md:w-[90%] h-[60vh] sm:h-[70vh] md:h-[75vh] flex flex-col border-3 border-black bg-amber-300 shadow-[_7px_7px_rgb(0,0,0)] lg:shadow-[_8px_8px_rgb(0,0,0)]"
+  >
+    {/* Window bar */}
+    <div className="flex items-center justify-between px-3 sm:px-4 py-2 border-b-3 border-black bg-[#45B1E8]">
+      <div className="flex gap-2">
+        <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 bg-red-500 border border-black" />
+        <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 bg-yellow-400 border border-black" />
+        <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 bg-green-500 border border-black" />
       </div>
+      <p className="font-bold text-xs sm:text-sm md:text-base">yatul@portfolio</p>
+    </div>
 
-      {/* ✅ CLICK TO FOCUS ADDED */}
-      <div
-        ref={contentRef}
-        onClick={(e) => {
-          if (e.target.tagName !== "INPUT") {
-            inputRef.current?.focus();
-          }
-        }}
-        className="w-[90%] h-[75vh] flex flex-col border-3 border-black bg-amber-300 shadow-[_7px_7px_rgb(0,0,0)] lg:shadow-[_8px_8px_rgb(0,0,0)]"
-      >
-        {/* HEADER */}
-        <div className="flex items-center justify-between px-4 py-2 border-b-3 border-black bg-[#45B1E8]">
-          <div className="flex gap-2">
-            <div className="w-3 h-3 bg-red-500 border border-black" />
-            <div className="w-3 h-3 bg-yellow-400 border border-black" />
-            <div className="w-3 h-3 bg-green-500 border border-black" />
-          </div>
-          <p className="font-bold">yatul@portfolio</p>
-        </div>
+    {/* Terminal lines */}
+    <div className="flex-1 overflow-y-auto p-3 sm:p-4 text-xs sm:text-sm md:text-base bg-[#fffafa]">
+      {history.map((line, i) => (
+        <Line key={i} line={line} />
+      ))}
 
-        {/* BODY */}
-        <div className="flex-1 overflow-y-auto p-4 text-sm bg-[#fffafa]">
-          {history.map((line, i) => (
-            <Line key={i} line={line} />
-          ))}
+      {/* Input line */}
+      <div className="flex items-center mt-2 sm:mt-3">
+        <span className="px-2 py-1 bg-[#66CDAA] border-2 border-black shadow-[_2px_2px_rgb(0,0,0)] text-xs sm:text-sm md:text-base">
+          yatul@portfolio
+        </span>
 
-          <div className="flex items-center mt-3">
-            <span className="px-2 py-1 bg-[#66CDAA] border-2 border-black shadow-[_2px_2px_rgb(0,0,0)]">
-              yatul@portfolio
-            </span>
+        <span className="px-2 py-1 bg-amber-300 border-2 border-black ml-2 shadow-[_2px_2px_rgb(0,0,0)] text-xs sm:text-sm md:text-base">
+          {path}
+        </span>
 
-            <span className="px-2 py-1 bg-amber-300 border-2 border-black ml-2 shadow-[_2px_2px_rgb(0,0,0)]">
-              {path}
-            </span>
+        <span className="mx-2 font-bold">$</span>
 
-            <span className="mx-2 font-bold">$</span>
-
-            <input
-              ref={inputRef}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              className="bg-transparent outline-none flex-1 text-black caret-black"
-            />
-          </div>
-        </div>
+        <input
+          ref={inputRef}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyDown}
+          className="bg-transparent outline-none flex-1 text-black caret-black text-xs sm:text-sm md:text-base"
+        />
       </div>
     </div>
+  </div>
+</div>
   );
 }
