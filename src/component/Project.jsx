@@ -207,15 +207,15 @@ export default function Project() {
                     setActiveCoords(item.coords);
                   }
                 }}
-                className={`relative pl-12 pb-12 last:pb-0 group transition-all duration-300 ${
+                className={`relative lg:pl-12 pb-12 last:pb-0 group transition-all duration-300 ${
                   item.coords ? "cursor-pointer" : "cursor-default"
                 } timeline-item`}
               >
                 {/* Vertical Line */}
-                <div className="absolute left-[8px] top-3 w-[2px] h-full bg-black/20 group-hover:bg-amber-400 transition-all duration-300"></div>
+                <div className="hidden lg:flex  absolute left-[8px] top-3 w-[2px] h-full bg-black/20 group-hover:bg-amber-400 transition-all duration-300"></div>
 
                 {/* Bullet */}
-                <div className="absolute left-0 top-3 w-5 h-5 bg-white border-[3px] border-black rounded-full shadow-[3px_3px_0px_black] group-hover:bg-amber-400 group-hover:scale-110 transition-all duration-300"></div>
+                <div className="hidden lg:flex absolute left-0 top-3 w-5 h-5 bg-white border-[3px] border-black rounded-full shadow-[3px_3px_0px_black] group-hover:bg-amber-400 group-hover:scale-110 transition-all duration-300"></div>
 
                 {/* Content Box */}
                 <div className="flex flex-col gap-3 bg-white border-[3px] border-black p-4 md:p-5 shadow-[6px_6px_0px_black] group-hover:shadow-[3px_3px_0px_black] group-hover:translate-x-[3px] group-hover:translate-y-[3px] transition-all duration-200">
