@@ -87,25 +87,25 @@ const Navbar = () => {
       <ul className="hidden lg:flex flex-wrap justify-center items-center gap-4 lg:gap-6 text-base sm:text-xl">
         <li
           onClick={() => scrollToSection("home")}
-          className="nav-item transition-colors cursor-pointer hover:text-white uppercase"
+          className="nav-item transition-colors cursor-pointer uppercase"
         >
           Home
         </li>
         <li
           onClick={() => scrollToSection("about")}
-          className="nav-item hover:text-white transition-colors cursor-pointer uppercase"
+          className="nav-item  transition-colors cursor-pointer uppercase"
         >
           About
         </li>
         <li
           onClick={() => scrollToSection("skills")}
-          className="nav-item hover:text-white transition-colors cursor-pointer uppercase"
+          className="nav-item  transition-colors cursor-pointer uppercase"
         >
           Skills
         </li>
         <li
           onClick={() => scrollToSection("projects")}
-          className="nav-item hover:text-white transition-colors cursor-pointer uppercase"
+          className="nav-item  transition-colors cursor-pointer uppercase"
         >
           Projects
         </li>
