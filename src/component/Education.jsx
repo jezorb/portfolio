@@ -61,12 +61,12 @@ const Education = () => {
   }, []);
 
   return (
-    <div id='education' ref={component} className="flex flex-col gap-4 m-auto p-4 w-full h-[50vh]">
+    <div id='education' ref={component} className="flex flex-col gap-4 m-auto p-4 w-full h-[50vh] ">
       
       {/* Header */}
       <p
         ref={headerRef}
-        className="text-3xl w-full md:text-4xl font-black tracking-tighter p-4 bg-amber-300 border-[3px] border-black shadow-[6px_6px_0px_black] uppercase"
+        className="text-3xl w-full md:text-4xl font-black tracking-tighter p-4 bg-amber-300 border-[3px] border-black shadow-[6px_6px_0px_black] uppercase group"
       >
         Education
       </p>

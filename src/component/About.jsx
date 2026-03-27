@@ -63,7 +63,7 @@ const About = () => {
 
         {/* Header */}
         <div ref={headerRef} className="group">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter p-3 sm:p-4 md:p-4 bg-amber-300 border-[3px] border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all group-hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-[2px] group-hover:translate-y-[2px] text-center md:text-left">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter p-3 sm:p-4 md:p-4 bg-amber-300 border-[3px] border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] text-center md:text-left">
             ABOUT
           </h2>
         </div>

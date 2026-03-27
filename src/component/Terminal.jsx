@@ -446,7 +446,7 @@ export default function Terminal() {
   {/* Header */}
   <div
     ref={headerRef}
-    className="text-3xl sm:text-4xl lg:text-5xl font-medium py-3 sm:py-4 border-3 w-full sm:w-[95%] md:w-[90%] flex justify-center items-center shadow-[_5px_5px_rgb(0,0,0)] bg-amber-300"
+    className="text-3xl sm:text-4xl lg:text-5xl font-medium py-3 sm:py-4 border-3 w-full sm:w-[95%] md:w-[90%] flex justify-center items-center shadow-[_5px_5px_rgb(0,0,0)] bg-amber-300 group"
   >
     <p>System Status</p>
   </div>

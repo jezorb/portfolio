@@ -126,7 +126,7 @@ const Footer = () => {
       {/* Heading */}
       <h1
         ref={headerRef}
-        className="text-xl md:text-2xl font-black p-3 bg-amber-300 border-3 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] uppercase"
+        className="text-xl md:text-2xl font-black p-3 bg-amber-300 border-3 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] uppercase group"
       >
         get in touch
       </h1>

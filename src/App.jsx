@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LoadingPage from "./component/LoadingPage";
 import Layout from "./component/Layout";
+import MaskWrapper from "./component/MaskWrapper";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -11,7 +12,11 @@ const App = () => {
         <LoadingPage onComplete={() => setLoading(false)} />
       )}
 
-      {!loading && <Layout />}
+      {!loading && (
+        <MaskWrapper>
+          <Layout />
+        </MaskWrapper>
+      )}
     </div>
   );
 };

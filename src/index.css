@@ -17,3 +17,13 @@
 .leaflet-container {
   background: #fdf6e3 !important; /* Matches watercolor theme */
 }
+
+
+html, body {
+  cursor: none; /* Original mouse pointer gayab */
+}
+
+/* Lekin inputs par dikhna chahiye taaki typing mein dikat na ho */
+input, textarea {
+  cursor: auto;
+}

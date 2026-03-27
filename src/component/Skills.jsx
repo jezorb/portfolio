@@ -188,8 +188,8 @@ const Skills = () => {
     <section id='skills' ref={sectionRef} className="py-20 px-6 md:px-12 selection:bg-amber-200 z-10">
       <div className="w-[90%] mx-auto">
         {/* Section Header - Neobrutalist Box */}
-        <div ref={headerRef} className="inline-block mb-12">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tighter p-4 bg-amber-300 border-[3px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] uppercase">
+        <div ref={headerRef} className="inline-block mb-12 group" >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter p-3 sm:p-4 md:p-4 bg-amber-300 border-[3px] border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] uppercase">
             Skills
           </h2>
         </div>

@@ -185,7 +185,7 @@ export default function Project() {
     >
       <div
         ref={headerRef}
-        className="text-start text-4xl lg:text-5xl font-medium py-4 border-3 w-[90%] flex justify-center items-center shadow-[_6px_6px_rgb(0,0,0)] bg-amber-300 uppercase font-semibold"
+        className="text-start text-4xl lg:text-5xl font-medium py-4 border-3 w-[90%] flex justify-center items-center shadow-[_6px_6px_rgb(0,0,0)] bg-amber-300 uppercase font-semibold group"
       >
         <p>MY JOURNEY</p>
       </div>

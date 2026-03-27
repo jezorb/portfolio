@@ -108,7 +108,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black hero-text-item uppercase leading-snug sm:leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black hero-text-item uppercase leading-snug sm:leading-tight group">
             I'm Yatul Jaat.
           </h1>
 
